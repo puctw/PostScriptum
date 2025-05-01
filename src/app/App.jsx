@@ -1,27 +1,30 @@
-import { useState } from 'react'
-import '../styles/App.css'
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import '../styles/App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
-    <>
-      <div>
-      </div>
-      <h1>Vite + React</h1>
+    <div id="root">
+      <h1>Welcome to Post Scriptum</h1>
+      <p>This is the home page of your digital legacy app.</p>
+
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <p>Count: {count}</p>
+        <button onClick={() => setCount(count + 1)}>Increase Count</button>
       </div>
+
       <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
+        Click the link below to go to the Auth page.
       </p>
-    </>
-  )
+
+      <Link to="/auth">Go to Auth Page</Link>
+      
+      <Link to="/dashboard">Go to Dash</Link>
+
+    </div>
+  );
 }
 
-export default App
+export default App;
