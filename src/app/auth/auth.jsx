@@ -9,12 +9,10 @@ export default function Auth() {
   const handleLogin = (e) => {
     e.preventDefault();
 
-    // Accept any input as valid
-    console.log('Username:', username);
-    console.log('Password:', password);
-
-    // Redirect to home page after "login"
-    navigate('/');
+    // No backend check – allow any input
+    if (username) {
+      navigate(`/${username}/dashboard`);
+    }
   };
 
   return (
