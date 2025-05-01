@@ -413,4 +413,59 @@
   
   .nav-button:hover {
     background: rgba(255, 255, 255, 0.15);
+    color: var(--primary)
+  }
+
+  /* Container for authentication buttons */
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  /* "Sign In" link with animated underline */
+  .signin-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 5rem;
+  }
+  
+  .signin-link::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  .signin-link:hover {
+    color: var(--primary)
+  }
+  .signin-link:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    /*background-color: var(--primary)*/
+  }
+
+  .login-button {
+    background-color: white;
+    color: #111;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+    border: none;
+    /*margin-right: 5rem;*/
+  }
+  
+  .login-button:hover {
+    background-color: #ddd;
+    color: var(--primary)
   }
