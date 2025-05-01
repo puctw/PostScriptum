@@ -7,6 +7,7 @@ import '../styles/index.css'
 import App from './App.jsx'
 import '../styles/App.css'
 import { useState } from 'react'
+import Dashboard from './dashboard/dashboard.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/auth" element={<Auth />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
