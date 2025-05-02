@@ -9,17 +9,19 @@ export default function Header() {
         <img src={logo} alt="Logo" />
       </Link>
 
-      <nav className="nav-links">
-        <Link to="/pricing" className="nav-button">Pricing</Link>
-        <Link to="/reviews" className="nav-button">Reviews</Link>
-        <Link to="/about" className="nav-button">About Us</Link>
-        <Link to="/contacts" className="nav-button">Contacts</Link>
-        <Link to="/faq" className="nav-button">FAQ</Link>
-      </nav>
+      <div className="header-right">
+        <nav className="nav-links">
+          <Link to="/pricing" className="nav-button">Pricing</Link>
+          <Link to="/reviews" className="nav-button">Reviews</Link>
+          <Link to="/about" className="nav-button">About Us</Link>
+          <Link to="/contacts" className="nav-button">Contacts</Link>
+          <Link to="/faq" className="nav-button">FAQ</Link>
+        </nav>
 
-      <div className="auth-buttons">
-        <Link to="/auth" className="login-button">Log In</Link>
-        <Link to="/auth" className="signin-link">Sign In</Link>
+        <div className="auth-buttons">
+          <Link to="/auth" className="login-button">Log In</Link>
+          <Link to="/auth" className="signin-link">Sign In</Link>
+        </div>
       </div>
     </header>
   );
