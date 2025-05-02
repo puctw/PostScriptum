@@ -9,6 +9,7 @@
     background: white;
     border-radius: 8px;
     overflow: hidden;
+    
   }
   
   .file-table th,
@@ -77,8 +78,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-self: center;
     padding: 1rem 0;
     margin-bottom: 1rem;
+    max-width: 90rem;
+    margin-left: 3.5rem;
   }
   
   .toolbar-left {
@@ -101,6 +105,7 @@
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
+    margin-left: 5 rem;
   }
   
   .folder-icon {
@@ -135,5 +140,21 @@
   
   .add-button:hover {
     background-color: #b189f7;
+  }
+  
+  .file-name-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* spacing between icon and text */
+  }
+  
+  .file-icon img {
+    width: 24px; /* or whatever size fits */
+    height: 24px;
+    object-fit: contain;
+  }
+  
+  .file-name-text {
+    vertical-align: middle;
   }
   

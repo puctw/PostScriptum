@@ -1,12 +1,18 @@
 import { useState } from 'react';
 import '../styles/files.css';
 import Header from '../components/Header_user';
+import pdf from "../assets/pdf.png";
+import ppt from "../assets/ppt.png";
+import word from "../assets/word.svg";
+import drive from "../assets/drive.svg";
+import onedrive from "../assets/onedrive.svg";
+import folder from "../assets/folder2.svg";
 
 export default function FilesPage() {
   const files = [
     { name: 'ImportantReport', type: 'pdf', accessed: '3h ago', size: '1096kb' },
     { name: 'Secrets of Bettencourt the III', type: 'pptx', accessed: '6h ago', size: '1.56Gb' },
-    { name: 'Cool picture', type: 'png', accessed: '1 day ago', size: '24Mb' },
+    { name: 'How to conquer the world', type: 'pptx', accessed: '1 day ago', size: '24Mb' },
     { name: 'Mission Report', type: 'docx', accessed: '1 week ago', size: '4024kb' },
   ];
 
@@ -24,14 +30,19 @@ export default function FilesPage() {
     setCheckedItems(updated);
   };
 
-  const getIcon = (type) => {
-    switch (type) {
-      case 'pdf': return '📄';
-      case 'pptx': return '📊';
-      case 'docx': return '📝';
+  const getFileIcon = (fileType) => {
+    switch (fileType) {
+      case 'pdf':
+        return <img src={pdf} alt="PDF Icon" />;
+      case 'pptx':
+        return <img src={ppt} alt="PPT Icon" />;
+      case 'docx':
+        return <img src={word} alt="Word Icon" />;
       case 'png':
-      case 'jpg': return '🖼️';
-      default: return '📁';
+      case 'jpg':
+        return '🖼️';
+      default:
+        return '📁';
     }
   };
 
@@ -43,13 +54,18 @@ export default function FilesPage() {
         <button className="back-button" onClick={() => window.location.href = '/dashboard'}>
           ◀
         </button>
-        <span className="folder-icon">📁</span>
+        <img src={folder} alt="Folder Icon" className="folder-icon" />
         <span className="files-label">Files</span>
       </div>
 
       <div className="toolbar-right">
-        <button className="cloud-button">🟡</button> {/* Replace with actual Google icon if needed */}
-        <button className="cloud-button">🔵</button> {/* Replace with actual OneDrive icon if needed */}
+      <button className="cloud-button">
+        <img src={drive} alt="Google Drive" className="cloud-icon" />
+      </button>
+      <button className="cloud-button">
+        <img src={onedrive} alt="OneDrive" className="cloud-icon" />
+      </button>
+
         <button className="add-button">+ Add new file</button>
       </div>
     </div>
@@ -82,8 +98,10 @@ export default function FilesPage() {
                   />
                 </td>
                 <td>
-                  <span className="file-icon">{getIcon(file.type)}</span>
-                  {file.name}
+                <div className="file-name-cell">
+                  <span className="file-icon">{getFileIcon(file.type)}</span>
+                  <span className="file-name-text">{file.name}</span>
+                </div>
                 </td>
                 <td>{file.type}</td>
                 <td>{file.accessed}</td>
