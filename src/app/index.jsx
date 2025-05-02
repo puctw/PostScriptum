@@ -9,6 +9,8 @@ import '../styles/App.css'
 import { useState } from 'react'
 import Dashboard from './dashboard/dashboard.jsx';
 import FilesPage from './FilesPage.jsx';
+import Keyholders from './Keyholders.jsx';
+import Premium from './Premium.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -18,6 +20,8 @@ createRoot(document.getElementById('root')).render(
         <Route path="/auth" element={<Auth />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/files" element={<FilesPage />} />
+        <Route path="/keyholders" element={<Keyholders />} />
+        <Route path="/premium" element={<Premium />} />
       </Routes>
     </BrowserRouter>
   </StrictMode>
