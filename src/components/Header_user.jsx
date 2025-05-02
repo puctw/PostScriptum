@@ -25,23 +25,25 @@ export default function DashboardHeader() {
           <Link to="/premium" className="nav-button">Try Premium</Link>
         </nav>
 
-        <div className="relative">
-          <img
+        <div className="avatar-wrapper">
+        <img
             src={avatar}
             alt="User"
-            className="w-10 h-10 rounded-full cursor-pointer"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-          />
-          {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-32 bg-white shadow-md rounded-md z-50">
-              <button
-                onClick={handleSignOut}
-                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              >
+            className="avatar-img"
+            onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setDropdownOpen(!dropdownOpen);
+            }}
+        />
+
+        {dropdownOpen && (
+            <div className="signout-dropdown">
+            <button onClick={handleSignOut} className="signout-button">
                 Sign Out
-              </button>
+            </button>
             </div>
-          )}
+        )}
         </div>
       </div>
     </header>
