@@ -4,7 +4,7 @@ import "./dashboard.css";
 import lockIcon from "../../assets/lock.svg";
 import galleryIcon from "../../assets/gallery.svg";
 import folderIcon from "../../assets/folder.svg";
-
+import Header from '../../components/Header_user';
 
 import netflixIcon from "../../assets/netflix.svg";
 import img1 from "../../assets/2.jpg";
@@ -15,7 +15,10 @@ import right from "../../assets/right.svg";
 import pdf from "../../assets/pdf.png";
 import ppt from "../../assets/ppt.png";
 import perfil from "../../assets/perfil.webp";
-
+import amazon from "../../assets/amazon.svg";
+import hbo from "../../assets/hbo.svg";
+import instagram from "../../assets/instagram.svg";
+import { Link } from "react-router-dom";
 
 // Import Swiper styles
 import "swiper/css";
@@ -38,6 +41,8 @@ export default function Dashboard() {
     // This is necessary because the refs are not attached during the first render
   }, []);
   return (
+    <>
+    <Header />
     <section id="dashboard-section">
       <div className="container">
         <div className="user">
@@ -99,7 +104,31 @@ export default function Dashboard() {
               <img src={netflixIcon} alt="" width={50} height={50} />
               <div className="user-info">
                 <h3 className="title">Netflix</h3>
-                <span className="username">@chikinho</span>
+                <span className="username">@ruividal</span>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img src={amazon} alt="" width={50} height={50} />
+              <div className="user-info">
+                <h3 className="title">Amazon</h3>
+                <span className="username">@ruividal2003</span>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img src={hbo} alt="" width={50} height={50} />
+              <div className="user-info">
+                <h3 className="title">HBO</h3>
+                <span className="username">@ruiVidal</span>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              {" "}
+              <img src={instagram} alt="" width={50} height={50} />
+              <div className="user-info">
+                <h3 className="title">Instagram</h3>
+                <span className="username">@rui_vidal</span>
               </div>
             </SwiperSlide>
             <SwiperSlide>
@@ -107,31 +136,7 @@ export default function Dashboard() {
               <img src={netflixIcon} alt="" width={50} height={50} />
               <div className="user-info">
                 <h3 className="title">Netflix</h3>
-                <span className="username">@chikinho</span>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <img src={netflixIcon} alt="" width={50} height={50} />
-              <div className="user-info">
-                <h3 className="title">Netflix</h3>
-                <span className="username">@chikinho</span>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <img src={netflixIcon} alt="" width={50} height={50} />
-              <div className="user-info">
-                <h3 className="title">Netflix</h3>
-                <span className="username">@chikinho</span>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              {" "}
-              <img src={netflixIcon} alt="" width={50} height={50} />
-              <div className="user-info">
-                <h3 className="title">Netflix</h3>
-                <span className="username">@chikinho</span>
+                <span className="username">@ruividal</span>
               </div>
             </SwiperSlide>
           </Swiper>
@@ -193,9 +198,16 @@ export default function Dashboard() {
           </Swiper>
         </div>
         <div className="files">
-          <div className="lock">
-            <img src={folderIcon} alt="" width={50} height={50} />
-            <h3 className="title">Files</h3>
+        <div className="account-content">
+            <div className="lock">
+              <img src={folderIcon} alt="" width={50} height={50} />
+              <h3 className="title">Files</h3>
+            </div>
+
+            <Link to="/files" className="pushable files-btn">
+              <span className="front">Files</span>
+            </Link>
+
           </div>
           <div className="custom-navigation">
             <div ref={prevRef3} className="custom-prev">
@@ -272,5 +284,6 @@ export default function Dashboard() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -130,7 +130,7 @@
     font-weight: 400;
     color: var(--bodyTextColor);
   }
-  #dashboard-section .account .account-content {
+  #dashboard-section .account-content {
     display: flex;
     width: 100%;
     justify-content: space-between;
