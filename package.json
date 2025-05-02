@@ -10,17 +10,18 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "drizzle-orm": "^0.43.1",
-    "mysql2": "^3.14.1",
     "@radix-ui/react-label": "^2.1.4",
     "@tabler/icons-react": "^3.31.0",
     "clsx": "^2.1.1",
+    "dotenv": "^16.5.0",
+    "drizzle-orm": "^0.43.1",
     "motion": "^12.9.4",
+    "mysql2": "^3.14.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.3",
-
+    "swiper": "^11.2.6",
+    "tailwind-merge": "^3.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
