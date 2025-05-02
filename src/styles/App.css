@@ -1,4 +1,5 @@
 :root {
+  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
   --primary: #eac696;
   --background: #f6f6f6;
   --primaryLight: #ffba43;
@@ -25,13 +26,13 @@ html {
 }
 
 h3 {
-  margin-bottom: 0.5rem;
+  margin: 0;
 }
 p,
-span, h3 {
+span,
+h3 {
   color: var(--headerColor);
 }
-
 
 .pushable {
   background: hsl(39, 25%, 25%);
