@@ -21,6 +21,7 @@ function App() {
       <p className="read-the-docs">
         Click the link below to go to the Auth page.
       </p>
+      <Link to="/files" className="nav-button">View Files</Link>
 
       <Link to="/auth">Go to Auth Page</Link>
       

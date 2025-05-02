@@ -25,19 +25,17 @@ export default function DashboardHeader() {
           <Link to="/premium" className="nav-button">Try Premium</Link>
         </nav>
 
-        <div className="relative">
+        {/* Single avatar block with dropdown */}
+        <div className="avatar-wrapper">
           <img
             src={avatar}
             alt="User"
-            className="w-10 h-10 rounded-full cursor-pointer"
+            className="avatar-img cursor-pointer"
             onClick={() => setDropdownOpen(!dropdownOpen)}
           />
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-32 bg-white shadow-md rounded-md z-50">
-              <button
-                onClick={handleSignOut}
-                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-              >
+            <div className="signout-dropdown">
+              <button onClick={handleSignOut} className="signout-button">
                 Sign Out
               </button>
             </div>
