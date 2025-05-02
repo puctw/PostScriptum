@@ -1,16 +1,20 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Input } from '../../components/input';
-import { Label } from '../../components/label';
-import '../../styles/signup.css'; 
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { Input } from '../../components/Input';
+import { Label } from '../../components/Label';
+import '../../styles/signup.css';
 
 export default function Auth() {
+  const [searchParams] = useSearchParams();
+  const mode = searchParams.get('mode') || 'login'; // default to login
+
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const [isSignUp, setIsSignUp] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
+
+  const isSignUp = mode === 'signup';
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -79,23 +83,6 @@ export default function Auth() {
             {isSignUp ? 'Sign Up' : 'Log In'}
           </button>
         </form>
-
-        <div className="text-center">
-          <button
-            type="button"
-            onClick={() => {
-              setIsSignUp((prev) => !prev);
-              setError('');
-              setPassword('');
-              setConfirmPassword('');
-            }}
-            className="text-sm text-blue-600 hover:underline mt-4"
-          >
-            {isSignUp
-              ? 'Already have an account? Log in'
-              : "Don't have an account? Sign up"}
-          </button>
-        </div>
       </div>
     </div>
   );
