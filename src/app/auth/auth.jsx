@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { Input } from '../../components/Input';
-import { Label } from '../../components/Label';
+import { Input } from '../../components/input';
+import { Label } from '../../components/label';
 import '../../styles/signup.css';
+import { Link } from 'react-router-dom';
 
 export default function Auth() {
   const [searchParams] = useSearchParams();
@@ -83,6 +84,17 @@ export default function Auth() {
             {isSignUp ? 'Sign Up' : 'Log In'}
           </button>
         </form>
+        <div className="text-center">
+          <Link
+            to={`/auth?mode=${isSignUp ? 'login' : 'signup'}`}
+            className="text-sm hover:underline mt-4 inline-block"
+            style={{ color: 'white' }}
+          >
+            {isSignUp
+              ? 'Already have an account? Log in'
+              : "Don't have an account? Sign up"}
+          </Link>
+        </div>
       </div>
     </div>
   );
