@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 import { Input } from '../../components/input';
 import { Label } from '../../components/label';
 import '../../styles/signup.css';
-import { Link } from 'react-router-dom';
 
 export default function Auth() {
   const [searchParams] = useSearchParams();
-  const mode = searchParams.get('mode') || 'login'; // default to login
+  const mode = searchParams.get('mode') || 'login';
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -33,13 +32,13 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-zinc-900 px-4">
-      <div className="w-full max-w-md space-y-6 bg-white dark:bg-zinc-800 p-6 rounded-lg shadow-lg">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 dark:text-white">
+    <div className="auth-wrapper">
+      <div className="auth-box">
+        <h2 className="auth-title">
           {isSignUp ? 'Create an Account' : 'Log In'}
         </h2>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form onSubmit={handleSubmit} className="auth-form">
           <div>
             <Label htmlFor="username">Username</Label>
             <Input
@@ -75,21 +74,15 @@ export default function Auth() {
             </div>
           )}
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {error && <p className="error-text">{error}</p>}
 
-          <button
-            type="submit"
-            className="w-full py-2 px-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-md transition"
-          >
+          <button type="submit" className="auth-button">
             {isSignUp ? 'Sign Up' : 'Log In'}
           </button>
         </form>
-        <div className="text-center">
-          <Link
-            to={`/auth?mode=${isSignUp ? 'login' : 'signup'}`}
-            className="text-sm hover:underline mt-4 inline-block"
-            style={{ color: 'white' }}
-          >
+
+        <div className="auth-footer">
+          <Link to={`/auth?mode=${isSignUp ? 'login' : 'signup'}`} className="auth-toggle-link">
             {isSignUp
               ? 'Already have an account? Log in'
               : "Don't have an account? Sign up"}
