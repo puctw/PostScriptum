@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/Header.css';
-import logo from '../assets/react.svg';
+import logo from '../assets/logo.png';
 import avatar from '../assets/user.png'; // Replace with your actual image
 
 export default function DashboardHeader() {

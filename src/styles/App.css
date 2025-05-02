@@ -1,6 +1,6 @@
 :root {
   /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-  --primary: #eac696;
+  --primary: #BEADFA;
   --background: #f6f6f6;
   --primaryLight: #ffba43;
   --secondary: #ffba43;
@@ -19,6 +19,7 @@
 body,
 html {
   background-color: var(--background);
+  scroll-behavior: smooth;
 }
 
 #root {
@@ -31,6 +32,27 @@ h3 {
 p,
 span,
 h3 {
+  color: var(--headerColor);
+}
+.topper {
+  font-size: var(--topperFontSize);
+  line-height: 1.2em;
+  text-transform: uppercase;
+  text-align: inherit;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.text {
+  font-size: var(--bodyFontSize);
+  line-height: 1.5em;
+  text-align: inherit;
+  width: 100%;
+  max-width: 40.625rem;
+  margin: 0;
   color: var(--headerColor);
 }
 
@@ -54,4 +76,720 @@ h3 {
 
 .pushable:active .front {
   transform: translateY(-2px);
+}
+
+/*-- -------------------------- -->
+<---           Hero             -->
+<--- -------------------------- -*/
+
+/* animation fade in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(25%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media only screen and (min-width: 0rem) {
+  #hero-82 {
+    text-align: center;
+    padding: clamp(7rem, 15.95vw, 14.75rem) 1rem 0;
+    padding-bottom: clamp(5.125rem, 6.5vw, 12em);
+    position: relative;
+    z-index: 1;
+  }
+  #hero-82 .cs-container {
+    width: 100%;
+    max-width: 67.5rem;
+    margin: auto;
+  }
+  #hero-82 .cs-title {
+    /* 39px - 61px */
+    font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+    font-weight: 700;
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 51.8125rem;
+    /* 16px - 24px */
+    margin: 0 auto clamp(1rem, 4vw, 1.5rem);
+    color: var(--headerColor);
+    position: relative;
+    animation: fadeIn 2.5s;
+  }
+  #hero-82 .cs-text:before {
+    /* Divider Line */
+    content: "";
+    width: 6.25rem;
+    height: 0.5rem;
+    /* 16px - 24px */
+    margin: clamp(1rem, 4vw, 1.5rem) auto clamp(1rem, 4vw, 1.5rem);
+    background: var(--primary);
+    opacity: 1;
+    position: relative;
+    display: block;
+  }
+  #hero-82 .cs-text {
+    /* opacity: 0; */
+    /* 16px - 25px */
+    font-size: clamp(1rem, 1.95vw, 1.5625rem);
+    line-height: 1.5em;
+    text-align: center;
+    width: 100%;
+    /* 464px - 800px */
+    max-width: clamp(29rem, 60vw, 50rem);
+    margin: 0 auto;
+    /* 40px - 48px */
+    margin-bottom: clamp(2.5rem, 4vw, 3rem);
+    color: var(--headerColor);
+    animation: fadeIn 2.5s;
+    /* animation-delay: 0.5s; */
+  }
+  #hero-82 .cs-button-solid {
+    font-size: 1rem;
+    line-height: 3.5rem;
+    text-decoration: none;
+    font-weight: 700;
+    margin: auto;
+    color: #fff;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  #hero-82 .cs-button-solid:before {
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #hero-82 .cs-button-solid:hover:before {
+    width: 100%;
+  }
+}
+
+/*-- -------------------------- -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #about-us {
+    background-color: var(--primary);
+  }
+  #about-us .container {
+    width: 100%;
+    max-width: 80em;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 7vw, 4rem);
+  }
+  #about-us .content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    /* moved section padding to the .content so we can have the picture be full width on mobile without the padding preventing it from doing so */
+    padding: var(--sectionPadding);
+    padding-top: 0;
+    /* prevents padding from affecting width and height */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+
+  #about-us .topper,
+  #about-us .title {
+    color: var(--headerColor);
+  }
+  #about-us .text {
+    margin-bottom: 1rem;
+    color: var(--headerColor);
+    opacity: 0.8;
+  }
+  #about-us .text:last-of-type {
+    margin-bottom: 2rem;
+  }
+  #about-us .button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #1a1a1a;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--headerColor);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+    transition: color 0.3s;
+  }
+  #about-us .button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #about-us .button-solid:hover {
+    color: #fff;
+  }
+  #about-us .button-solid:hover:before {
+    width: 100%;
+  }
+  #about-us .picture {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 18.75rem;
+  }
+  #about-us .picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #about-us {
+    margin-left: 0;
+    margin-right: 0;
+    padding: var(--sectionPadding);
+    background-color: transparent;
+    overflow: hidden;
+  }
+  #about-us .container {
+    flex-direction: row;
+    position: relative;
+    z-index: 1;
+  }
+  #about-us .content {
+    width: 51%;
+    padding: 0;
+  }
+  #about-us .picture {
+    width: 47vw;
+    max-width: 38.625rem;
+    height: 33.5rem;
+    margin: clamp(1.5rem, 3vw, 2rem) 0 clamp(1.5rem, 3vw, 2rem)
+      clamp(1.5rem, 3vw, 2rem);
+    position: relative;
+    order: 2;
+  }
+}
+
+/*-- -------------------------- -->
+<---            FAQ             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #faq {
+    padding: var(--sectionPadding);
+    background: #fafbfc;
+  }
+  #faq .container {
+    width: 100%;
+    /* changes to 1280px at tablet */
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    /* 40px - 48px */
+    gap: clamp(2.5rem, 5vw, 3rem);
+  }
+  #faq .content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+
+  #faq .color {
+    color: var(--primary);
+  }
+
+  #faq .title {
+    /* 17 characters wide including spaces */
+    max-width: 17ch;
+  }
+  #faq .text {
+    /* 32px - 48px */
+    margin-bottom: clamp(2rem, 3vw, 3rem);
+  }
+  #faq .button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #faq .button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #faq .button-solid:hover:before {
+    width: 100%;
+  }
+  #faq .faq-group {
+    max-width: 46.25rem;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+  #faq .faq-item {
+    list-style: none;
+    width: 100%;
+    /* prevents border from affecting width and height */
+    box-sizing: border-box;
+    border: 1px solid #f1f1f4;
+    transition: border 0.3s, padding 0.3s, border-color 0.3s;
+  }
+  #faq .faq-item:hover {
+    border-color: var(--primary);
+  }
+  #faq .faq-item.active {
+    padding-bottom: 1rem;
+    border-color: var(--primary);
+  }
+  #faq .faq-item.active .button {
+    color: var(--primary);
+  }
+  #faq .faq-item.active .button:before {
+    transform: translateY(-50%) rotate(180deg);
+    opacity: 0;
+    background-color: var(--primary);
+  }
+  #faq .faq-item.active .button:after {
+    transform: translateY(-50%) rotate(360deg);
+    background-color: var(--primary);
+  }
+  #faq .faq-item.active .item-p {
+    height: auto;
+    margin-top: 0.5rem;
+    opacity: 1;
+  }
+  #faq .button {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 1vw, 1.5625rem);
+    line-height: 1.2em;
+    text-align: left;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    border: none;
+    background: transparent;
+    color: var(--headerColor);
+    display: block;
+    width: 100%;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  #faq .button:hover {
+    cursor: pointer;
+  }
+  #faq .button:before {
+    /* horizontal line */
+    content: "";
+    width: 1rem;
+    height: 0.1875rem;
+    background-color: currentColor;
+    opacity: 1;
+    border-radius: 1px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%);
+    transition: transform 0.5s, opacity 0.3s;
+  }
+  #faq .button:after {
+    /* vertical line */
+    content: "";
+    width: 1rem;
+    height: 0.1875rem;
+    background-color: currentColor;
+    opacity: 1;
+    border-radius: 1px;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 1.5rem;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+    transition: transform 0.5s;
+  }
+  #faq .button-text {
+    width: 80%;
+    display: block;
+  }
+  #faq .item-p {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    width: 90%;
+    height: 0;
+    margin: 0;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    opacity: 0;
+    color: var(--bodyTextColor);
+    /* clips the text so it doesn't show up */
+    overflow: hidden;
+    transition: opacity 0.3s, padding-bottom 0.3s;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 48rem) {
+  #faq .container {
+    max-width: 80rem;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3.25rem;
+  }
+  #faq .content {
+    margin-top: 3.125rem;
+  }
+  #faq .title,
+  #faq .topper {
+    text-align: left;
+    margin-left: 0;
+  }
+  #faq .faq-group {
+    width: clamp(56%, 58vw, 58%);
+    flex: none;
+  }
+}
+
+/*-- -------------------------- -->
+<---          Pricing           -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+  #pricing {
+    padding: var(--sectionPadding);
+    background-color: #f7f7f7;
+  }
+  #pricing .container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #pricing .content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+  }
+
+  #pricing .card-group {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 16px - 20px */
+    gap: clamp(1rem, 2vw, 1.25rem);
+  }
+  #pricing .item {
+    list-style: none;
+    /* 20px - 32px top & bottom */
+    /* 16px - 32px left & right */
+    padding: clamp(1.25rem, 3vw, 2rem) clamp(1rem, 2.4vw, 2rem);
+    width: 100%;
+    max-width: 25.8125rem;
+    border-radius: 1rem;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    /* prevents padding from adding to height and width */
+    box-sizing: border-box;
+  }
+  #pricing .item:nth-of-type(2) .option2-text,
+  #pricing .item:nth-of-type(2) .option1-text {
+    transition-delay: 0.1s;
+  }
+  #pricing .item:nth-of-type(3) .option2-text,
+  #pricing .item:nth-of-type(3) .option1-text {
+    transition-delay: 0.2s;
+  }
+  #pricing .popular {
+    background: var(--primary);
+    position: relative;
+    /* clips the popular tag */
+    overflow: hidden;
+    /* send to the top */
+    order: -1;
+  }
+  #pricing .popular:before {
+    /* Most Popular Tag */
+    content: "Popular";
+    font-size: 0.875rem;
+    text-align: center;
+    line-height: 1.8125em;
+    font-weight: 700;
+    width: 10.625rem;
+    padding: 0 0.75rem;
+    color: var(--bodyTextColorWhite);
+    background-color: var(--secondary);
+    position: absolute;
+    display: block;
+    top: 1.25rem;
+    right: -3.75rem;
+    transform: rotate(42deg);
+  }
+  #pricing .popular .h3,
+  #pricing .popular .item-text,
+  #pricing .popular .price,
+  #pricing .popular .included,
+  #pricing .popular .li,
+  #pricing .popular .small {
+    color: var(--bodyTextColorWhite);
+  }
+  #pricing .popular .button-solid {
+    background-color: #fff;
+    color: var(--primary);
+    transition: color 0.3s;
+  }
+  #pricing .popular .button-solid:before {
+    background-color: var(--secondary);
+  }
+  #pricing .popular .button-solid:hover {
+    color: #fff;
+  }
+  #pricing .popular .li-img {
+    /* turns the check mark white */
+    filter: brightness(900%);
+  }
+  #pricing .h3 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+    padding: 0;
+    color: var(--headerColor);
+  }
+  #pricing .item-text {
+    font-size: 0.875rem;
+    line-height: 1.5em;
+    /* 16px - 24px */
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+    padding: 0;
+    color: var(--bodyTextColor);
+  }
+  #pricing .option-group {
+    position: relative;
+  }
+  #pricing .option-group:after {
+    /* top right box */
+    content: "";
+    width: 100%;
+    height: 1px;
+    /* 32px - 40px */
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+    background: linear-gradient(
+      90deg,
+      rgba(232, 232, 232, 0.2) 0%,
+      #e8e8e8 53.78%,
+      rgba(232, 232, 232, 0.2) 100%
+    );
+    opacity: 1;
+    position: relative;
+    display: block;
+  }
+  #pricing .price {
+    font-size: 3.0625rem;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--headerColor);
+    /* spans are inline, need to add block for margin to work */
+    display: block;
+  }
+  #pricing .small {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: #4e4b66;
+  }
+  #pricing .included {
+    font-size: 1rem;
+    line-height: 1.5em;
+    font-weight: 700;
+    /* 16px - 24px */
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    color: var(--headerColor);
+    display: block;
+  }
+  #pricing .ul {
+    padding: 0;
+    margin: 0;
+    /* 32px - 40px */
+    margin-bottom: clamp(2rem, 4vw, 2.5rem);
+  }
+  #pricing .li {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    line-height: 1.5em;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.75rem;
+    color: var(--bodyTextColor);
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  #pricing .li:last-of-type {
+    margin-bottom: 0;
+  }
+  #pricing .disabled {
+    /* fades out list items that are disabled from the price tier */
+    filter: grayscale(1);
+    opacity: 0.3;
+  }
+  #pricing .li-img {
+    width: 1.25rem;
+    height: auto;
+    margin-top: 0.1875rem;
+    margin-right: 0.5rem;
+  }
+  #pricing .button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    border-radius: 0.25rem;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
+  }
+  #pricing .button-solid:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 0.25rem;
+    transition: width 0.3s;
+  }
+  #pricing .button-solid:hover:before {
+    width: 100%;
+  }
+  #pricing .button-solid {
+    /* button-solid override */
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+/* Tablet 768px */
+@media only screen and (min-width: 48rem) {
+  #pricing .card-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: nowrap;
+  }
+  #pricing .item {
+    width: 100%;
+    /* ensures they stay the same height if you add more content */
+    align-self: stretch;
+  }
+  #pricing .popular {
+    /* send back to its original order */
+    order: unset;
+  }
+  #pricing #option2-357:before {
+    top: -0.625rem;
+  }
+  #pricing #option2-357:after {
+    top: -2.1875rem;
+    right: -6.25rem;
+  }
 }
