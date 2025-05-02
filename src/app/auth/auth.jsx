@@ -28,7 +28,7 @@ export default function Auth() {
       return setError('Passwords do not match.');
     }
 
-    navigate(`/${username}/dashboard`);
+    navigate(`/dashboard`);
   };
 
   return (
