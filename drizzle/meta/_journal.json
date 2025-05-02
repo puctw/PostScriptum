@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "singlestore",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "1",
+      "when": 1746121087244,
+      "tag": "0000_supreme_quasar",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "1",
+      "when": 1746179462842,
+      "tag": "0001_charming_owl",
+      "breakpoints": true
+    }
+  ]
+}
