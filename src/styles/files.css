@@ -1,0 +1,74 @@
+.files-page {
+    padding: 2rem;
+    font-family: sans-serif;
+  }
+  
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .file-table th,
+  .file-table td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .file-table th {
+    background: #fafafa;
+    color: #333;
+    font-size: 0.9rem;
+  }
+  
+  .file-icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+  }
+  
+  .file-table tbody tr:hover {
+    background-color: #d1d0d0;
+    cursor: pointer;
+  }
+
+  .file-table input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: #fff;
+    border: 1.5px solid #ccc;
+    border-radius: 4px;
+    width: 18px;
+    height: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  
+  /* Add a checkmark */
+  .file-table input[type="checkbox"]::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 8px;
+    border: solid #333;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    top: 3px;
+    left: 6px;
+    transition: transform 0.2s ease;
+  }
+  
+  /* Checked state */
+  .file-table input[type="checkbox"]:checked {
+    background-color: #4f46e5; /* Indigo or any accent color */
+    border-color: #4f46e5;
+  }
+  
+  .file-table input[type="checkbox"]:checked::after {
+    transform: rotate(45deg) scale(1);
+    border-color: white;
+  }
