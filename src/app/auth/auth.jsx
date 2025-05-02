@@ -82,7 +82,10 @@ export default function Auth() {
         </form>
 
         <div className="auth-footer">
-          <Link to={`/auth?mode=${isSignUp ? 'login' : 'signup'}`} className="auth-toggle-link">
+          <Link
+            to={`/auth?mode=${isSignUp ? 'login' : 'signup'}`}
+            className="auth-toggle-link"
+          >
             {isSignUp
               ? 'Already have an account? Log in'
               : "Don't have an account? Sign up"}

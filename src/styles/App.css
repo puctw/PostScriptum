@@ -1,11 +1,11 @@
 :root {
-  /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-  --primary: #ff6a3e;
+  --primary: #eac696;
+  --background: #f6f6f6;
   --primaryLight: #ffba43;
   --secondary: #ffba43;
   --secondaryLight: #ffba43;
-  --headerColor: #1a1a1a;
-  --bodyTextColor: #4e4b66;
+  --headerColor: #212121;
+  --bodyTextColor: #212121;
   --bodyTextColorWhite: #fafbfc;
   /* 13px - 16px */
   --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
@@ -15,6 +15,42 @@
   /* 60px - 100px top and bottom */
   --sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 }
-#root{
+body,
+html {
+  background-color: var(--background);
+}
+
+#root {
   width: 100%;
+}
+
+h3 {
+  margin-bottom: 0.5rem;
+}
+p,
+span, h3 {
+  color: var(--headerColor);
+}
+
+
+.pushable {
+  background: hsl(39, 25%, 25%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+}
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: var(--primary);
+  color: white;
+  transform: translateY(-6px);
+}
+
+.pushable:active .front {
+  transform: translateY(-2px);
 }
