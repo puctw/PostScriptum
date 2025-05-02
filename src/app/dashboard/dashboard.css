@@ -1,31 +1,395 @@
-
-
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-    #dashboard-section {
-        padding: var(--sectionPadding);
-    }
-    #dashboard-section .container {
-        width: 100%;
-        /* changes to 1280px at tablet */
-        max-width: (550/16rem);
-        margin: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        /* 48px - 64px */
-        gap: clamp(3rem, 6vw, 4rem);
-        position: relative;
-        z-index: 1;
-    }
+  #dashboard-section {
+    padding: var(--sectionPadding);
+  }
+  #dashboard-section .container {
+    width: 100%;
+    max-width: 34.375rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #dashboard-section .user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: center;
+  }
+  #dashboard-section .user img {
+    width: 7.125rem;
+    height: 7.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  #dashboard-section .user .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dashboard-section .user .details .username {
+    font-size: var(--headerFontSize);
+    font-weight: 600;
+  }
+  #dashboard-section .user .details .plan {
+    font-size: var(--bodyFontSize);
+    font-weight: 400;
+    color: var(--bodyTextColor);
+  }
+
+  .swiper {
+    position: relative;
+    /* overflow: visible; */
+  }
+
+  .swiper-slide {
+    height: 21.875rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: all 0.3s;
+  }
+
+  .swiper-slide-next {
+    transform: translate3d(-250px, 0px, 0px) scale(0.8);
+    z-index: -1;
+  }
+  .swiper-slide-prev {
+    transform: translate3d(250px, 0px, 0px) scale(0.8);
+    z-index: -1;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: var(--primary);
+  }
+  .swiper {
+    max-width: 67.5rem;
+  }
+  .swiper-slide {
+    height: 28.125rem;
+    width: 43.75rem;
+  }
+  .swiper-button-next {
+    transform: translateX(1rem);
+  }
+  .swiper-button-prev {
+    transform: translateX(-1rem);
+  }
 }
 
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-    #dashboard-section .container {
-        max-width: (1280/16rem);
-    }
-        
+  #dashboard-section .container {
+    max-width: 80rem;
+  }
 
+  .swiper .swiper-slide {
+    width: 43.75rem;
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    user-select: none;
+  }
 }
-                                
+@media only screen and (min-width: 64rem) {
+  #dashboard-section .user {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 5rem;
+
+    gap: 1rem;
+    justify-content: center;
+  }
+  #dashboard-section .user img {
+    width: 7.125rem;
+    height: 7.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  #dashboard-section .user .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dashboard-section .user .details .username {
+    font-size: var(--headerFontSize);
+    font-weight: 600;
+  }
+  #dashboard-section .user .details .plan {
+    font-size: var(--bodyFontSize);
+    font-weight: 400;
+    color: var(--bodyTextColor);
+  }
+  #dashboard-section .account .account-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #dashboard-section .account .custom-navigation {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 73.5rem;
+    max-width: 73.5rem;
+    gap: 1rem;
+    z-index: 2;
+  }
+  #dashboard-section .account .swiper {
+    margin-top: 1rem;
+    max-width: 67.5rem;
+  }
+  #dashboard-section .account .swiper-slide {
+    height: 5.125rem;
+    width: 43.75rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  #dashboard-section .account .swiper-slide img {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
+  #dashboard-section .account .swiper-slide .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  #dashboard-section .account .swiper-button-next {
+    transform: translateX(1rem);
+  }
+  #dashboard-section .account .swiper-button-prev {
+    transform: translateX(-1rem);
+  }
+
+  #dashboard-section .gallery {
+    position: relative;
+  }
+
+  #dashboard-section .gallery .custom-navigation {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 73.5rem;
+    max-width: 73.5rem;
+    gap: 1rem;
+    z-index: 2;
+  }
+  .custom-prev,
+  .custom-next {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--primary);
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .custom-prev img {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .custom-next img {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #dashboard-section .gallery .swiper {
+    margin-top: 1rem;
+    max-width: 67.5rem;
+  }
+  #dashboard-section .gallery .swiper-slide {
+    height: 18.125rem;
+    width: 43.75rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  #dashboard-section .gallery .swiper-slide img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+  #dashboard-section .gallery .swiper-slide .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  #dashboard-section .gallery .swiper-button-next {
+    transform: translateX(1rem);
+  }
+  #dashboard-section .gallery .swiper-button-prev {
+    transform: translateX(-1rem);
+  }
+
+  #dashboard-section {
+    padding: var(--sectionPadding);
+  }
+  #dashboard-section .container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+    position: relative;
+    z-index: 1;
+  }
+  #dashboard-section .user {
+    align-self: flex-start;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    justify-content: flex-start;
+  }
+  #dashboard-section .user .details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #dashboard-section .user .details .username {
+    font-size: var(--headerFontSize);
+    font-weight: 600;
+  }
+  #dashboard-section .user .details .plan {
+    background-color: var(--primary);
+    font-size: var(--bodyFontSize);
+    padding: 0.5rem 1rem;
+    font-weight: 400;
+    color: var(--bodyTextColor);
+  }
+  #dashboard-section .account .account-content {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #dashboard-section .lock {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+  #dashboard-section .lock img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  #dashboard-section .files .custom-navigation {
+    position: absolute;
+    top: 95.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 73.5rem;
+    max-width: 73.5rem;
+    gap: 1rem;
+    z-index: 2;
+  }
+  /* 
+  #dashboard-section .files img {
+    width: 3.125rem;
+    height: 3.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+  } */
+
+  #dashboard-section .files .swiper {
+    margin-top: 1rem;
+    max-width: 67.5rem;
+  }
+  #dashboard-section .files .swiper-slide {
+    height: 18.125rem;
+    width: 43.75rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  #dashboard-section .files .swiper-slide img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+  }
+  #dashboard-section .files .swiper-slide {
+    height: 5.125rem;
+    width: 43.75rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+  }
+  #dashboard-section .files .swiper-slide img {
+    position: relative;
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+  }
+
+  #dashboard-section .files .swiper-slide .user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  #dashboard-section .files .swiper-button-next {
+    transform: translateX(1rem);
+  }
+  #dashboard-section .files .swiper-button-prev {
+    transform: translateX(-1rem);
+  }
+}
+@media only screen and (min-width: 81rem) {
+  .swiper {
+    max-width: 80rem;
+
+    .swiper-button-next {
+      transform: translateX(4rem);
+    }
+    .swiper-button-prev {
+      transform: translateX(-4rem);
+    }
+  }
+}
