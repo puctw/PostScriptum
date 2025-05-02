@@ -20,7 +20,7 @@ export default function Header() {
 
         <div className="auth-buttons">
         <Link to="/auth?mode=login" className="login-button">Log In</Link>
-        <Link to="/auth?mode=signup" className="signin-link">Sign In</Link>
+        <Link to="/auth?mode=signup" className="signin-link">Sign Up</Link>
         </div>
       </div>
     </header>
