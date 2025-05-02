@@ -19,7 +19,7 @@
   }
   
   .file-table th {
-    background: #fafafa;
+    background: #d9d9d9;
     color: #333;
     font-size: 0.9rem;
   }
@@ -30,7 +30,7 @@
   }
   
   .file-table tbody tr:hover {
-    background-color: #d1d0d0;
+    background-color: #b1b0b0;
     cursor: pointer;
   }
 
@@ -72,3 +72,68 @@
     transform: rotate(45deg) scale(1);
     border-color: white;
   }
+
+  .file-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+  }
+  
+  .toolbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .toolbar-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .back-button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .folder-icon {
+    color: #000;
+    font-size: 1.2rem;
+  }
+  
+  .files-label {
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+  
+  .cloud-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+  
+  .add-button {
+    background-color: #000;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .add-button:hover {
+    background-color: #b189f7;
+  }
+  
