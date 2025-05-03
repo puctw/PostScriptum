@@ -49,7 +49,8 @@ export default function Dashboard() {
           <img src={perfil} alt="" width={50} height={50} />
           <div className="details">
             <span className="username">Hello, Rui</span>
-            <span className="plan">Pro User</span>
+            <span className="email">orui@mail.com</span>
+            <span className="plan">Premium User</span>
           </div>
         </div>
         <div className="account">
