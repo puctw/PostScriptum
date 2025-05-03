@@ -1,0 +1,46 @@
+.guardians-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 20px;
+    flex-wrap: wrap; /* Optional for responsiveness */
+  }
+  
+  .guardians-section,
+  .pending-section {
+    width: 45%; /* Adjust width to control size */
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+  }
+  
+  .file-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+  }
+  
+  .file-table th,
+  .file-table td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .file-table th {
+    font-weight: bold;
+  }
+
+
+  .section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.section-icon {
+  width: 24px;
+  height: 24px;
+}

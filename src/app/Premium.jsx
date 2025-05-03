@@ -1,116 +1,65 @@
 import { useState } from 'react';
-import '../styles/files.css';
+import '../styles/App.css'; // make sure to update to your actual styles
 import Header from '../components/Header_user';
-import pdf from "../assets/pdf.png";
-import ppt from "../assets/ppt.png";
-import word from "../assets/word.svg";
-import drive from "../assets/drive.svg";
-import onedrive from "../assets/onedrive.svg";
-import folder from "../assets/folder2.svg";
+import family from "../assets/family.svg";
+import clock from "../assets/clock.svg";
+import sbs from "../assets/sbs.jpg"; // assuming this is the correct import
+import check from "../assets/check.svg";
 
 export default function Premium() {
-  const files = [
-    { name: 'ImportantReport', type: 'pdf', accessed: '3h ago', size: '1096kb' },
-    { name: 'Secrets of Bettencourt the III', type: 'pptx', accessed: '6h ago', size: '1.56Gb' },
-    { name: 'How to conquer the world', type: 'pptx', accessed: '1 day ago', size: '24Mb' },
-    { name: 'Mission Report', type: 'docx', accessed: '1 week ago', size: '4024kb' },
-  ];
-
-  // Track which checkboxes are checked
-  const [checkedItems, setCheckedItems] = useState(Array(files.length).fill(false));
-  const allChecked = checkedItems.every(Boolean);
-
-  const toggleAll = () => {
-    setCheckedItems(Array(files.length).fill(!allChecked));
-  };
-
-  const toggleOne = (index) => {
-    const updated = [...checkedItems];
-    updated[index] = !updated[index];
-    setCheckedItems(updated);
-  };
-
-  const getFileIcon = (fileType) => {
-    switch (fileType) {
-      case 'pdf':
-        return <img src={pdf} alt="PDF Icon" />;
-      case 'pptx':
-        return <img src={ppt} alt="PPT Icon" />;
-      case 'docx':
-        return <img src={word} alt="Word Icon" />;
-      case 'png':
-      case 'jpg':
-        return '🖼️';
-      default:
-        return '📁';
-    }
+  const [activeIndex, setActiveIndex] = useState(null);
+  const toggleFAQ = (index) => {
+    setActiveIndex(activeIndex === index ? null : index);
   };
 
   return (
     <>
       <Header />
-      <div className="file-toolbar">
-      <div className="toolbar-left">
-        <button className="back-button" onClick={() => window.location.href = '/dashboard'}>
-          ◀
-        </button>
-        <img src={folder} alt="Folder Icon" className="folder-icon" />
-        <span className="files-label">Files</span>
-      </div>
-
-      <div className="toolbar-right">
-      <button className="cloud-button">
-        <img src={drive} alt="Google Drive" className="cloud-icon" />
-      </button>
-      <button className="cloud-button">
-        <img src={onedrive} alt="OneDrive" className="cloud-icon" />
-      </button>
-
-        <button className="add-button">+ Add new file</button>
-      </div>
+      <section id="pricing">
+  <div className="container">
+    <div className="content">
+      <span className="topper">Pricing</span>
+      <h2 className="title">It’s Easy to Get Started</h2>
+      <p className="text">
+        Choose a plan that fits your needs. We offer flexible pricing options to suit everyone.
+      </p>
     </div>
-      <div className="files-page">
-        <table className="file-table">
-          <thead>
-            <tr>
-              <th>
-                <input
-                  type="checkbox"
-                  checked={allChecked}
-                  onChange={toggleAll}
-                  title="Select All"
-                />
-              </th>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Last accessed</th>
-              <th>Size</th>
-            </tr>
-          </thead>
-          <tbody>
-            {files.map((file, index) => (
-              <tr key={index}>
-                <td>
-                  <input
-                    type="checkbox"
-                    checked={checkedItems[index]}
-                    onChange={() => toggleOne(index)}
-                  />
-                </td>
-                <td>
-                <div className="file-name-cell">
-                  <span className="file-icon">{getFileIcon(file.type)}</span>
-                  <span className="file-name-text">{file.name}</span>
-                </div>
-                </td>
-                <td>{file.type}</td>
-                <td>{file.accessed}</td>
-                <td>{file.size}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+    <ul className="card-group">
+      <li className="item popular">
+        <h3 className="h3">Base plan</h3>
+        <p className="item-text">Perfect to get started securing your heritage.</p>
+        <div className="option-group">
+          <span className="price">750€</span>
+        </div>
+        <span className="included">Package Includes</span>
+        <ul className="ul">
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Image uploading using third party services</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Save account details</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Private file uploading using third party services</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> 1 trusted guardian</li>
+        </ul>
+        <a href="/basic.html" className="button-solid">Get Started</a>
+      </li>
+
+      <li className="item">
+        <h3 className="h3">Premium plan</h3>
+        <p className="item-text">Your legacy secured with us.</p>
+        <div className="option-group">
+          <span className="price">1450€</span>
+        </div>
+        <span className="included">Package Includes</span>
+        <ul className="ul">
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Everything in the base plan</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Image uploading hosted by our servers</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> 3 trusted guardians</li>
+          <li className="li"><img className="li-img" src={check} alt="" width="20" height="20" /> Private file uploading using our servers</li>
+        </ul>
+        <a href="/basic.html" className="button-solid">Get Started</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
     </>
   );
 }
