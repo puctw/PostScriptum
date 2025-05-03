@@ -4,6 +4,7 @@ import Header from '../components/Header_user';
 import folder from "../assets/folder2.svg";
 import family from "../assets/family.svg";
 import clock from "../assets/clock.svg";
+import back_button from '../assets/back-button.svg';
 
 export default function Keyholders() {
   const guardians = [
@@ -38,7 +39,7 @@ export default function Keyholders() {
       <div className="file-toolbar">
         <div className="toolbar-left">
           <button className="back-button" onClick={() => window.location.href = '/dashboard'}>
-            ◀
+            <img src={back_button} alt="Back" />
           </button>
           <img src={folder} alt="Folder Icon" className="folder-icon" />
           <span className="files-label">Guardians</span>

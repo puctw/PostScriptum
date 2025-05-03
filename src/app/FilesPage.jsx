@@ -7,6 +7,7 @@ import word from "../assets/word.svg";
 import drive from "../assets/drive.svg";
 import onedrive from "../assets/onedrive.svg";
 import folder from "../assets/folder2.svg";
+import back_button from '../assets/back-button.svg';
 
 export default function FilesPage() {
   const files = [
@@ -52,7 +53,7 @@ export default function FilesPage() {
       <div className="file-toolbar">
       <div className="toolbar-left">
         <button className="back-button" onClick={() => window.location.href = '/dashboard'}>
-          ◀
+          <img src={back_button} alt="Back" />
         </button>
         <img src={folder} alt="Folder Icon" className="folder-icon" />
         <span className="files-label">Files</span>
