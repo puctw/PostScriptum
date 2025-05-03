@@ -6,7 +6,7 @@ import galleryIcon from "../../assets/gallery.svg";
 import folderIcon from "../../assets/folder.svg";
 import Header from '../../components/Header_user';
 
-import netflixIcon from "../../assets/netflix.svg";
+import evernote from "../../assets/evernote.svg";
 import img1 from "../../assets/2.jpg";
 import img2 from "../../assets/1.jpg";
 import img3 from "../../assets/3.jpg";
@@ -16,8 +16,8 @@ import pdf from "../../assets/pdf.png";
 import ppt from "../../assets/ppt.png";
 import perfil from "../../assets/perfil.webp";
 import amazon from "../../assets/amazon.svg";
-import hbo from "../../assets/hbo.svg";
-import instagram from "../../assets/instagram.svg";
+import behance from "../../assets/behance.svg";
+import github from "../../assets/github.svg";
 import { Link } from "react-router-dom";
 
 // Import Swiper styles
@@ -102,9 +102,9 @@ export default function Dashboard() {
             }}
           >
             <SwiperSlide>
-              <img src={netflixIcon} alt="" width={50} height={50} />
+              <img src={evernote} alt="" width={50} height={50} />
               <div className="user-info">
-                <h3 className="title">Netflix</h3>
+                <h3 className="title">Evernote</h3>
                 <span className="username">@ruividal</span>
               </div>
             </SwiperSlide>
@@ -118,25 +118,25 @@ export default function Dashboard() {
             </SwiperSlide>
             <SwiperSlide>
               {" "}
-              <img src={hbo} alt="" width={50} height={50} />
+              <img src={behance} alt="" width={50} height={50} />
               <div className="user-info">
-                <h3 className="title">HBO</h3>
+                <h3 className="title">Behance</h3>
                 <span className="username">@ruiVidal</span>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               {" "}
-              <img src={instagram} alt="" width={50} height={50} />
+              <img src={github} alt="" width={50} height={50} />
               <div className="user-info">
-                <h3 className="title">Instagram</h3>
+                <h3 className="title">GitHub</h3>
                 <span className="username">@rui_vidal</span>
               </div>
             </SwiperSlide>
             <SwiperSlide>
               {" "}
-              <img src={netflixIcon} alt="" width={50} height={50} />
+              <img src={evernote} alt="" width={50} height={50} />
               <div className="user-info">
-                <h3 className="title">Netflix</h3>
+                <h3 className="title">Evernote</h3>
                 <span className="username">@ruividal</span>
               </div>
             </SwiperSlide>
