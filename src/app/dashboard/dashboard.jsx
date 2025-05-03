@@ -206,7 +206,7 @@ export default function Dashboard() {
             </div>
 
             <Link to="/files" className="pushable files-btn">
-              <span className="front">Files</span>
+              <span className="front">Details</span>
             </Link>
 
           </div>
