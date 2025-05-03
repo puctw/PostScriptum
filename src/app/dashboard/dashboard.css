@@ -23,8 +23,8 @@
     justify-content: center;
   }
   #dashboard-section .user img {
-    width: 7.125rem;
-    height: 7.125rem;
+    width: 9.125rem;
+    height: 9.125rem;
     border-radius: 50%;
     object-fit: cover;
   }
@@ -41,6 +41,11 @@
     font-size: var(--bodyFontSize);
     font-weight: 400;
     color: var(--bodyTextColor);
+  }
+
+  #dashboard-section .user .details .email {
+    position: relative;
+    top: -16px; 
   }
 
   .swiper {
@@ -283,7 +288,7 @@
   #dashboard-section .user .details {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
   #dashboard-section .user .details .username {
     font-size: var(--headerFontSize);
